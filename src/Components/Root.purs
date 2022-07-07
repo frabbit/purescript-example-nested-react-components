@@ -15,7 +15,7 @@ component = do
 
   subContainer1 <- liftEffect $ Container.containerStatic
   sub <- liftEffect Sub.component
-  subContainer2 <- liftEffect $ Container.container
+  subContainer2 <- liftEffect $ Container.containerDynamic
   liftEffect $ H.component "Root" \_ -> H.do
     val /\ setVal <- H.useState 0
     let props = { val, setVal }

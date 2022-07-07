@@ -15,7 +15,7 @@ containerStatic = do
   liftEffect $ H.component "ContainerStatic" \props -> React.do
     pure $ R.div { className: "ContainerStatic", children: [R.text "ContainerStatic", subComp props]}
 
-container :: forall m . (MonadEffect m) => m (JSX -> JSX)
-container = do
+containerDynamic :: forall m . (MonadEffect m) => m (JSX -> JSX)
+containerDynamic = do
   liftEffect $ H.component "Container" \child -> React.do
     pure $ R.div { className: "ContainerDynamic", children: [R.text "Container Dynamic", child]}
